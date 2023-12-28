@@ -1,4 +1,4 @@
-import './AuthPage.css'
+import "./AuthPage.css";
 import Logo from "../../assets/Logo.png";
 import {useState} from "react";
 import Login from "./Login";
@@ -23,10 +23,10 @@ const AuthPage = () => {
             <div className="w-full h-screen bg-[#F5F5F5] flex justify-center">
                 <div className="w-[90%] h-full">
                     <div className="w-full h-[8%]">
-                        <img src={Logo} alt="" className='w-32 h-full'/>
+                        <img src={Logo} alt="" className="w-32 h-full" />
                     </div>
                     <div className="w-full flex items-center justify-center h-[92%]">
-                        <div className="bg-gray-200 rounded flex flex-col items-center w-[35%] ph:w-[100%] h-[95%] py-[10px] px-[20px]">
+                        <div className="bg-gray-200 rounded flex flex-col items-center w-[35%] phone:w-[100%] h-[95%] py-[10px] px-[20px]">
                             <div className="bg-gray-400 flex justify-between p-1 rounded-sm w-[85%] h-[9%]">
                                 <div
                                     className="h-full flex items-center justify-center rounded-sm cursor-pointer text-sm text-white w-[48%]"
@@ -74,6 +74,5 @@ const AuthPage = () => {
         </>
     );
 };
-  
 
 export default AuthPage;

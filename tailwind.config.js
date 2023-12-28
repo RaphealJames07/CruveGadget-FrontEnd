@@ -22,10 +22,10 @@ export default {
         }
       },
       screens: {
-        'ph' : {'max':'480px'},
+        'phone' : {'max':'480px'},
         'tb' : '1024px',
         'dk' : '1280px',
-        'smph': '351px'
+        'smallPhone': '351px'
       },
       
   },

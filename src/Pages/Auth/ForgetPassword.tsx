@@ -79,18 +79,18 @@ const ForgetPassword = () => {
                         <img
                             src={Logo}
                             alt=""
-                            className="h-full w-[8%] ph:w-20 object-contain"
+                            className="h-full w-[8%] phone:w-20 object-contain"
                         />
                     </div>
                     <div className="w-full flex items-center justify-center flex-col h-[80%] ">
                         <h1 className="text-2xl mb-2">Forgot Your Password?</h1>
-                        <div className="w-[40%] ph:w-[100%] flex flex-col justify-around items-center h-1/2 bg-white">
+                        <div className="w-[40%] phone:w-[100%] flex flex-col justify-around items-center h-1/2 bg-white">
                             <div className="w-full flex items-center justify-around flex-col h-1/2">
                                 <label htmlFor="email">
                                     Enter Email for Reset Password
                                 </label>
                                 <input
-                                    className="w-[80%] ph:w-[90%] h-10 pl-2 rounded outline-none border border-solid border-[#3F51B5]"
+                                    className="w-[80%] phone:w-[90%] h-10 pl-2 rounded outline-none border border-solid border-[#3F51B5]"
                                     style={{
                                         border: `${
                                             errMsg.multipleErr === "mailErrMul"
@@ -143,7 +143,12 @@ const ForgetPassword = () => {
                         </div>
                     </div>
                     <div className="w-full flex items-center justify-center h-[10%]">
-                        <button className="w-40 h-12 rounded text-indigo-700 text-base cursor-pointer bg-white border border-solid border-[#3F51B5]" onClick={handleBackTo}>Back To Sign In</button>
+                        <button
+                            className="w-40 h-12 rounded text-indigo-700 text-base cursor-pointer bg-white border border-solid border-[#3F51B5]"
+                            onClick={handleBackTo}
+                        >
+                            Back To Sign In
+                        </button>
                     </div>
                 </div>
             </div>

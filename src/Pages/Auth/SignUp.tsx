@@ -1,18 +1,17 @@
 // import "./SIgnUp.css";
 import {AiOutlineEye, AiOutlineEyeInvisible} from "react-icons/ai";
 import {useEffect, useState} from "react";
-import { FcCheckmark } from 'react-icons/fc'
+import {FcCheckmark} from "react-icons/fc";
 import {LoadingOutlined} from "@ant-design/icons";
 import axios from "axios";
 // import Swal from "sweetalert2";
 import Flag from "../../assets/flag.svg";
 import {useNavigate} from "react-router-dom";
-import { toast } from "react-toastify";
-
+import {toast} from "react-toastify";
 
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
-    const [process, setProcess] = useState(false)
+    const [process, setProcess] = useState(false);
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
     };
@@ -20,15 +19,15 @@ const SignUp = () => {
     const handleShowPasswordC = () => {
         setShowPasswordC(!showPasswordC);
     };
-    const[quanVal, setQuanVal] = useState(false)
-    const[uppCaseVal, setUppCaseVal] = useState(false)
-    const[lowCaseVal, setLowCaseVal] = useState(false)
-    const[numVal, setNumVal] = useState(false)
-    const[specCharVal, setSpecCharVal] = useState(false)
+    const [quanVal, setQuanVal] = useState(false);
+    const [uppCaseVal, setUppCaseVal] = useState(false);
+    const [lowCaseVal, setLowCaseVal] = useState(false);
+    const [numVal, setNumVal] = useState(false);
+    const [specCharVal, setSpecCharVal] = useState(false);
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("")
+    const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -56,7 +55,7 @@ const SignUp = () => {
     const url = "https://e-gadget.onrender.com/api/sign-up";
     const nav = useNavigate();
 
-    const handleInputChange = (e:any, inputType:any) => {
+    const handleInputChange = (e: any, inputType: any) => {
         const inputValue = e.target.value;
 
         // Reset error styles when input value changes
@@ -98,10 +97,16 @@ const SignUp = () => {
     const [confirmPasswordDivError, setConfirmPasswordDivError] =
         useState(false);
 
-    const HandleSignUp = (e:any) => {
+    const HandleSignUp = (e: any) => {
         console.log("Signing Up...");
         e.preventDefault();
-        setErrMsg({error: false, type: "", message: "", multipleErr: "", div:''});
+        setErrMsg({
+            error: false,
+            type: "",
+            message: "",
+            multipleErr: "",
+            div: "",
+        });
         setPhoneDivError(false);
         setPasswordDivError(false);
         setConfirmPasswordDivError(false);
@@ -212,18 +217,24 @@ const SignUp = () => {
             setConfirmPasswordDivError(false);
             setLoading(true);
             setInputErr(true);
-            setErrMsg({error: false, type:'', message:'', multipleErr:'', div:''});
+            setErrMsg({
+                error: false,
+                type: "",
+                message: "",
+                multipleErr: "",
+                div: "",
+            });
             axios
                 .post(url, data)
                 .then((res) => {
-                    toast.success("Account Created Successfully")
+                    toast.success("Account Created Successfully");
                     console.log(res);
                     setLoading(false);
                     setInputErr(false);
                     const token = res.data.data.token;
                     const email = res.data.data.email;
                     setTimeout(() => {
-                     nav(`/Verify/${token}?email=${email}`);
+                        nav(`/Verify/${token}?email=${email}`);
                     }, 3000);
                 })
                 .catch((error) => {
@@ -232,7 +243,7 @@ const SignUp = () => {
                     setBackErr(errorMessage);
                     setLoading(false);
                     setInputErr(false);
-                    toast.error(`${errorMessage}`)
+                    toast.error(`${errorMessage}`);
                 });
         }
 
@@ -244,40 +255,39 @@ const SignUp = () => {
     useEffect(() => {
         if (!/[A-Z]/.test(password)) {
             setUppCaseVal(true);
-            setInputErr(true)
+            setInputErr(true);
         } else {
-            setUppCaseVal(false); 
+            setUppCaseVal(false);
         }
-    
+
         if (!/[a-z]/.test(password)) {
             setLowCaseVal(true);
-            setInputErr(true)
+            setInputErr(true);
         } else {
-            setLowCaseVal(false); 
+            setLowCaseVal(false);
         }
-    
+
         if (!/[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/.test(password)) {
             setSpecCharVal(true);
-            setInputErr(true)
+            setInputErr(true);
         } else {
-            setSpecCharVal(false); 
+            setSpecCharVal(false);
         }
-    
-        if (!password.split('').some(char => '0123456789'.includes(char))) {
+
+        if (!password.split("").some((char) => "0123456789".includes(char))) {
             setNumVal(true);
-            setInputErr(true)
+            setInputErr(true);
         } else {
-            setNumVal(false); 
+            setNumVal(false);
         }
-    
+
         if (password.length < 7) {
             setQuanVal(true);
-            setInputErr(true)
+            setInputErr(true);
         } else {
-            setQuanVal(false); 
+            setQuanVal(false);
         }
     }, [password]);
-    
 
     return (
         <>
@@ -292,7 +302,9 @@ const SignUp = () => {
                             <div className="w-full flex items-center justify-between h-[50%]">
                                 <label htmlFor="">First Name</label>
                                 {errMsg.type === "firstName" ? (
-                                    <p className="text-xs text-red-700">{errMsg.message}</p>
+                                    <p className="text-xs text-red-700">
+                                        {errMsg.message}
+                                    </p>
                                 ) : null}
                             </div>
                             <div className="w-full h-[50%]">
@@ -318,7 +330,9 @@ const SignUp = () => {
                             <div className="w-full h-[50%] flex items-center justify-between">
                                 <label htmlFor="">Last Name</label>
                                 {errMsg.type === "lastName" ? (
-                                    <p className="text-xs text-red-700">{errMsg.message}</p>
+                                    <p className="text-xs text-red-700">
+                                        {errMsg.message}
+                                    </p>
                                 ) : null}
                             </div>
                             <div className="w-full h-1/2">
@@ -345,10 +359,14 @@ const SignUp = () => {
                         <div className="flex w-full items-center justify-between h-1/2">
                             <label htmlFor="">Email Address</label>
                             {errMsg.type === "email" ? (
-                                <p className="text-xs text-red-700 block">{errMsg.message}</p>
+                                <p className="text-xs text-red-700 block">
+                                    {errMsg.message}
+                                </p>
                             ) : null}
                             {errMsg.type === "email@" ? (
-                                <p className="text-xs text-red-700 block">{errMsg.message}</p>
+                                <p className="text-xs text-red-700 block">
+                                    {errMsg.message}
+                                </p>
                             ) : null}
                         </div>
                         <div className="w-full h-1/2">
@@ -372,14 +390,20 @@ const SignUp = () => {
                         <div className="flex w-full items-center justify-between h-1/2">
                             <label htmlFor="">Phone Number</label>
                             {errMsg.type === "phoneNumber" ? (
-                                <p className="text-xs text-red-700">{errMsg.message}</p>
+                                <p className="text-xs text-red-700">
+                                    {errMsg.message}
+                                </p>
                             ) : null}
 
                             {errMsg.type === "phoneAlpha" ? (
-                                <p className="text-xs text-red-700">{errMsg.message}</p>
+                                <p className="text-xs text-red-700">
+                                    {errMsg.message}
+                                </p>
                             ) : null}
                             {errMsg.type === "phoneLength" ? (
-                                <p className="text-xs text-red-700">{errMsg.message}</p>
+                                <p className="text-xs text-red-700">
+                                    {errMsg.message}
+                                </p>
                             ) : null}
                         </div>
                         <div
@@ -391,7 +415,12 @@ const SignUp = () => {
                             }}
                         >
                             <div className="w-1/5 h-full flex items-center justify-center text-sm">
-                                <img src={Flag} alt="" className="w-2/5 h-1/2" /> <span>+234</span>
+                                <img
+                                    src={Flag}
+                                    alt=""
+                                    className="w-2/5 h-1/2"
+                                />{" "}
+                                <span>+234</span>
                             </div>
 
                             <input
@@ -412,10 +441,14 @@ const SignUp = () => {
                         <div className="flex w-full justify-between items-center h-1/2">
                             <label htmlFor="">Password</label>
                             {errMsg.type === "password" ? (
-                                <p className="text-xs text-red-700">{errMsg.message}</p>
+                                <p className="text-xs text-red-700">
+                                    {errMsg.message}
+                                </p>
                             ) : null}
                             {errMsg.type === "passwordSmall" ? (
-                                <p className="text-xs text-red-700">{errMsg.message}</p>
+                                <p className="text-xs text-red-700">
+                                    {errMsg.message}
+                                </p>
                             ) : null}
                         </div>
                         <div
@@ -458,7 +491,9 @@ const SignUp = () => {
                         <div className="flex w-full justify-between items-center h-1/2">
                             <label htmlFor="">Confirm Password</label>
                             {errMsg.type === "passwordMatch" ? (
-                                <p className="text-xs text-red-700">{errMsg.message}</p>
+                                <p className="text-xs text-red-700">
+                                    {errMsg.message}
+                                </p>
                             ) : null}
                         </div>
                         <div
@@ -517,37 +552,58 @@ const SignUp = () => {
                 </div>
             </div>
             {process ? (
-                <div className="fixed w-[300px] h-[350px] right-[7%] bottom-[10%] ph:hidden">
+                <div className="fixed w-[300px] h-[350px] right-[7%] bottom-[10%] phone:hidden">
                     <div className="w-full flex font-bold h-[10%] text-black">
                         <span>Your Password must contain</span>
                     </div>
                     <div className="w-full flex flex-col h-[80%] pl-3 gap-[10px]">
                         <div className="flex items-center gap-3">
-                            <span className="text-base font-medium rounded-sm" style={{color: `${uppCaseVal ? 'red': 'green'}`}}>
+                            <span
+                                className="text-base font-medium rounded-sm"
+                                style={{
+                                    color: `${uppCaseVal ? "red" : "green"}`,
+                                }}
+                            >
                                 UpperCase(A-Z)
                             </span>
                             {uppCaseVal === false ? <FcCheckmark /> : null}
                         </div>
                         <div className="flex items-center gap-3">
-                            <span className="text-base font-medium rounded-sm" style={{color: `${lowCaseVal ? 'red': 'green'}`}}>
+                            <span
+                                className="text-base font-medium rounded-sm"
+                                style={{
+                                    color: `${lowCaseVal ? "red" : "green"}`,
+                                }}
+                            >
                                 LowerCase(a-z)
                             </span>
                             {lowCaseVal === false ? <FcCheckmark /> : null}
                         </div>
                         <div className="flex items-center gap-3">
-                            <span className="text-base font-medium rounded-sm" style={{color: `${specCharVal ? 'red': 'green'}`}}>
+                            <span
+                                className="text-base font-medium rounded-sm"
+                                style={{
+                                    color: `${specCharVal ? "red" : "green"}`,
+                                }}
+                            >
                                 Special Characters
                             </span>
                             {specCharVal === false ? <FcCheckmark /> : null}
                         </div>
                         <div className="flex items-center gap-3">
-                            <span className="text-base font-medium rounded-sm" style={{color: `${numVal ? 'red': 'green'}`}}>
+                            <span
+                                className="text-base font-medium rounded-sm"
+                                style={{color: `${numVal ? "red" : "green"}`}}
+                            >
                                 Number(0-9)
                             </span>
                             {numVal === false ? <FcCheckmark /> : null}
                         </div>
                         <div className="flex items-center gap-3">
-                            <span className="text-base font-medium rounded-sm" style={{color: `${quanVal ? 'red': 'green'}`}}>
+                            <span
+                                className="text-base font-medium rounded-sm"
+                                style={{color: `${quanVal ? "red" : "green"}`}}
+                            >
                                 7+ characters
                             </span>
                             {quanVal === false ? <FcCheckmark /> : null}
