@@ -9,6 +9,9 @@ import ForgetPassword from "./Pages/Auth/ForgetPassword";
 import VerifySuccess from "./Pages/Auth/VerifySuccess";
 import ToHome from "./Pages/Home/ToHome";
 import Home from "./Pages/Home/Home";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Blog from "./Pages/Blog";
 
 const App = () => {
     return (
@@ -25,6 +28,9 @@ const App = () => {
                         <Route path="/ForgetPassword" element={<ForgetPassword />} />
                         <Route path="/VerifySuccess" element={<VerifySuccess />} />
                         <Route path="/Home" element={<Home />} />
+                        <Route path="/About" element={<About/>} />
+                        <Route path="/Contact" element={<Contact/>} />
+                        <Route path="/Blog" element={<Blog/>} />
                     </Routes>
                 </div>
             </HashRouter>

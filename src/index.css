@@ -10,3 +10,7 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+
+.bgimg{
+  background-image: url(/src/assets/bg1.jpg);
+}
