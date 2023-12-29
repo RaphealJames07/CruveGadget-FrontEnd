@@ -146,17 +146,15 @@ const Header = () => {
                             </li>
                         </ul>
                     </div>
-                    <div className="w-[20%] h-full phone:w-[35%] flex justify-between items-center">
-                        <div className="w-[25%] h-full phone:w-[23%]  phone:h-10 flex items-center justify-center">
-                            <AiOutlineSearch className="w-6 h-6 phone:w-28 phone:h-28 cursor-pointer" />
-                        </div>
-                        <div className="w-[25%] h-full phone:w-[23%]  phone:h-10 flex items-center justify-center">
+                    <div className="w-[20%] h-full phone:w-[25%] flex gap-8 items-center">
+                        
+                        <div className="w-[25%] h-full phone:w-[35%]  phone:h-10 flex items-center justify-center">
                             <BiSolidUserCircle
                                 className="w-6 h-6 phone:w-28 phone:h-28  cursor-pointer"
                                 onClick={navToProfile}
                             />
                         </div>
-                        <div className="w-[25%] h-full phone:w-[23%]  phone:h-10 flex items-center justify-center">
+                        <div className="w-[25%] h-full phone:w-[35%]  phone:h-10 flex items-center justify-center">
                             <FaShoppingCart
                                 className="w-6 h-6 phone:w-28 phone:h-28  cursor-pointer"
                                 onClick={navToCart}
