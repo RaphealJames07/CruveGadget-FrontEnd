@@ -12,6 +12,7 @@ import Home from "./Pages/Home/Home";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Blog from "./Pages/Blog";
+import Shop from "./Pages/Shop";
 
 const App = () => {
     return (
@@ -28,6 +29,7 @@ const App = () => {
                         <Route path="/ForgetPassword" element={<ForgetPassword />} />
                         <Route path="/VerifySuccess" element={<VerifySuccess />} />
                         <Route path="/Home" element={<Home />} />
+                        <Route path="/Shop" element={<Shop />} />
                         <Route path="/About" element={<About/>} />
                         <Route path="/Contact" element={<Contact/>} />
                         <Route path="/Blog" element={<Blog/>} />
