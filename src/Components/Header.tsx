@@ -91,7 +91,7 @@ const Header = () => {
                 placement="left"
                 closable={true}
                 onClose={toggleMobileMenu}
-                visible={mobileMenuVisible}
+                open={mobileMenuVisible}
                 width={300}
                 footer={true}
             >

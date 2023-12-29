@@ -5,13 +5,152 @@ import {FaArrowLeft, FaHeart, FaStar} from "react-icons/fa";
 import {HiViewGrid} from "react-icons/hi";
 import {MdViewList} from "react-icons/md";
 import {BiReset} from "react-icons/bi";
-import {Pagination, Slider} from "antd";
+import {Drawer, Pagination, Slider} from "antd";
 import airpod from "../assets/airpod.png";
-import './Pages.css'
+import "./Pages.css";
+import {useState} from "react";
 
 const Shop = () => {
+    const [filter, setFilter] = useState(false);
+
+    const handleFilter = () => {
+        setFilter(!filter);
+        // console.log("Sidebar Opened");
+    };
     return (
         <>
+            <Drawer
+                title="Filter"
+                placement="left"
+                closable={true}
+                onClose={() => setFilter(false)}
+                open={filter}
+                width={300}
+                footer={true}
+            >
+                <div className="w-full h-max flex flex-col bg-sky-50 px-2 gap-4">
+                    <div className="w-full h-16 flex items-center justify-between border-b border-b-gray-400">
+                        <span className="w-max h-max flex items-center gap-2 cursor-pointer bg-sky-300 rounded p-2">
+                            <AiOutlineMenuUnfold className="w-5 h-5" /> Filters
+                        </span>
+                        <span className="w-max h-max flex items-center gap-2 cursor-pointer bg-sky-300 rounded p-2">
+                            <BiReset className="w-5 h-5" /> Reset Filters
+                        </span>
+                    </div>
+                    <div className="w-full h-max flex flex-col gap-2">
+                        <div className="px-8 py-2 bg-gray-200 w-max h-max flex items-center justify-center">
+                            PRICES
+                        </div>
+                        <div className="w-full h-max flex flex-col gap-2">
+                            <Slider range defaultValue={[20, 50]} />
+                            <div className="w-full h-max flex justify-between">
+                                <div className="px-4 py-2 border-2 border-pry flex items-center justify-center">
+                                    10,000
+                                </div>
+                                <div className="px-4 py-2 border-2 border-pry flex items-center justify-center">
+                                    10,000
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-full h-max flex flex-col gap-4">
+                        <div className="w-max h-max px-4 py-2 bg-gray-200 rounded flex items-center justify-center">
+                            COLOR
+                        </div>
+                        <div className="flex items-center gap-4">
+                            <input
+                                type="radio"
+                                className="w-7 h-7 cursor-pointer"
+                            />
+                            <input
+                                type="radio"
+                                className="w-7 h-7 cursor-pointer"
+                            />
+                            <input
+                                type="radio"
+                                className="w-7 h-7 cursor-pointer"
+                            />
+                            <input
+                                type="radio"
+                                className="w-7 h-7 cursor-pointer"
+                            />
+                            <input
+                                type="radio"
+                                className="w-7 h-7 cursor-pointer"
+                            />
+                        </div>
+                    </div>
+                    <div className="w-full h-max flex flex-col gap-4">
+                        <div className="w-max px-4 py-2 flex items-center justify-center h-max bg-gray-200">
+                            SHOP BY BRANDS
+                        </div>
+                        <input
+                            type="search"
+                            placeholder="Search brands"
+                            className="w-full h-10 rounded border-pry border pl-3 outline-none text-sm"
+                        />
+                        <div className="w-full h-max flex flex-col">
+                            <div className="w-full h-12  cursor-pointer text-pry flex items-center gap-4">
+                                <input type="checkbox" className="w-6 h-6" />
+                                <p className="w-full h-full flex items-center justify-between">
+                                    Samsung{" "}
+                                    <span className="w-max flex items-center">
+                                        21
+                                    </span>
+                                </p>
+                            </div>
+                            <div className="w-full h-12 cursor-pointer flex items-center gap-4">
+                                <input type="checkbox" className="w-6 h-6" />
+                                <p className="w-full h-full flex items-center justify-between">
+                                    Samsung{" "}
+                                    <span className="w-max flex items-center">
+                                        21
+                                    </span>
+                                </p>
+                            </div>
+                            <div className="w-full h-12 cursor-pointer flex items-center gap-4">
+                                <input type="checkbox" className="w-6 h-6" />
+                                <p className="w-full h-full flex items-center justify-between">
+                                    Samsung{" "}
+                                    <span className="w-max flex items-center">
+                                        21
+                                    </span>
+                                </p>
+                            </div>
+                            <div className="w-full h-12 cursor-pointer flex items-center gap-4">
+                                <input type="checkbox" className="w-6 h-6" />
+                                <p className="w-full h-full flex items-center justify-between">
+                                    Samsung{" "}
+                                    <span className="w-max flex items-center">
+                                        21
+                                    </span>
+                                </p>
+                            </div>
+                            <div className="w-full h-12 cursor-pointer flex items-center gap-4">
+                                <input type="checkbox" className="w-6 h-6" />
+                                <p className="w-full h-full flex items-center justify-between">
+                                    Samsung{" "}
+                                    <span className="w-max flex items-center">
+                                        21
+                                    </span>
+                                </p>
+                            </div>
+                            <div className="w-full h-12 cursor-pointer flex items-center gap-4">
+                                <input type="checkbox" className="w-6 h-6" />
+                                <p className="w-full h-full flex items-center justify-between">
+                                    Samsung{" "}
+                                    <span className="w-max flex items-center">
+                                        21
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-full h-12">
+                        <button className="w-full h-full bg-pry rounded text-white">Apply Filters</button>
+                    </div>
+                </div>
+            </Drawer>
             <div className="w-full h-max">
                 <Header />
                 <div className="w-full h-max pt-20 pb-5">
@@ -64,7 +203,15 @@ const Shop = () => {
                         <p>Phones</p>
                     </div>
                     <div className="w-full h-14 px-20 phone:px-5 flex items-center justify-between">
-                        <div>Phones</div>
+                        <div className="w-full h-max items-center justify-between">
+                            <p className="phone:hidden">Phones</p>
+                            <p
+                                className="rounded phone:block w-max h-max px-4 py-2 bg-gray-200 flex items-center justify-center cursor-pointer"
+                                onClick={handleFilter}
+                            >
+                                Filter
+                            </p>
+                        </div>
                         <div className="w-max flex items-center gap-8 phone:gap-4 phone:text-sm">
                             <div className="w-max flex items-center gap-2">
                                 <p>Sort By</p>
@@ -87,8 +234,8 @@ const Shop = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full h-max px-20 phone:px-5 py-5 flex justify-between">
-                        <div className="w-[23%] phone: h-max flex flex-col bg-sky-50 px-2 gap-4">
+                    <div className="w-full h-max px-20 phone:px-3 py-5 flex justify-between">
+                        <div className="w-[23%] phone:hidden h-max flex flex-col bg-sky-50 px-2 gap-4">
                             <div className="w-full h-16 flex items-center justify-between border-b border-b-gray-400">
                                 <span className="w-max h-max flex items-center gap-2 cursor-pointer bg-sky-300 rounded p-2">
                                     <AiOutlineMenuUnfold className="w-5 h-5" />{" "}
@@ -229,32 +376,32 @@ const Shop = () => {
                         </div>
                         <div className="w-[75%] phone:w-[100%] h-max flex flex-col bg-sky-300 py-1 px-2">
                             <div className="w-full h-max flex flex-wrap gap-4">
-                                <div className="w-[32%]  rounded h-80 border border-gray-200">
-                                    <div className="w-full h-[50%] flex items-center justify-center">
+                                <div className="w-[32%] phone:w-[47%] rounded h-80 phone:h-72 border border-gray-200">
+                                    <div className="w-full h-[50%] phone:px-0 flex items-center justify-center bg-white">
                                         <img
                                             src={airpod}
                                             alt=""
                                             className="w-full h-full object-contain"
                                         />
                                     </div>
-                                    <div className="w-full h-[50%] bg-gray-50 flex flex-col py-4 px-3 gap-2">
+                                    <div className="w-full h-[50%] bg-gray-50 flex flex-col phone:justify-between phone:py-2 py-4 px-3 phone:px-1 phone:text-sm gap-2">
                                         <p className="text-pry font-bold">
                                             Apple Airpod Pro
                                         </p>
-                                        <p className="flex justify-between pr-5">
+                                        <p className="flex justify-between pr-5 phone:text-base">
                                             N65,000{" "}
                                             <span className="text-sm line-through">
                                                 N80,000
                                             </span>
                                         </p>
-                                        <p className="flex justify-between items-center">
+                                        <p className="flex justify-between items-center phone:text-xs">
                                             <span className="flex items-center gap-1">
                                                 <FaStar className="text-orange-400 w-4 h-4" />
                                                 3.0
                                             </span>{" "}
                                             (15 reviews){" "}
                                             <span>
-                                                <FaHeart className="h-6 w-6 cursor-pointer text-red-500" />
+                                                <FaHeart className="h-6 w-6 phone:h-4 phone:w-4 cursor-pointer text-red-500" />
                                             </span>
                                         </p>
                                         <button className="w-full h-max bg-pry py-2 rounded text-white">
@@ -262,32 +409,32 @@ const Shop = () => {
                                         </button>
                                     </div>
                                 </div>
-                                <div className="w-[32%]  rounded h-80 border border-gray-200">
-                                    <div className="w-full h-[50%] flex items-center justify-center">
+                                <div className="w-[32%] phone:w-[47%] rounded h-80 phone:h-72 border border-gray-200">
+                                    <div className="w-full h-[50%] phone:px-0 flex items-center justify-center bg-white">
                                         <img
                                             src={airpod}
                                             alt=""
                                             className="w-full h-full object-contain"
                                         />
                                     </div>
-                                    <div className="w-full h-[50%] bg-gray-50 flex flex-col py-4 px-3 gap-2">
+                                    <div className="w-full h-[50%] bg-gray-50 flex flex-col phone:justify-between phone:py-2 py-4 px-3 phone:px-1 phone:text-sm gap-2">
                                         <p className="text-pry font-bold">
                                             Apple Airpod Pro
                                         </p>
-                                        <p className="flex justify-between pr-5">
+                                        <p className="flex justify-between pr-5 phone:text-base">
                                             N65,000{" "}
                                             <span className="text-sm line-through">
                                                 N80,000
                                             </span>
                                         </p>
-                                        <p className="flex justify-between items-center">
+                                        <p className="flex justify-between items-center phone:text-xs">
                                             <span className="flex items-center gap-1">
                                                 <FaStar className="text-orange-400 w-4 h-4" />
                                                 3.0
                                             </span>{" "}
                                             (15 reviews){" "}
                                             <span>
-                                                <FaHeart className="h-6 w-6 cursor-pointer text-red-500" />
+                                                <FaHeart className="h-6 w-6 phone:h-4 phone:w-4 cursor-pointer text-red-500" />
                                             </span>
                                         </p>
                                         <button className="w-full h-max bg-pry py-2 rounded text-white">
@@ -295,32 +442,32 @@ const Shop = () => {
                                         </button>
                                     </div>
                                 </div>
-                                <div className="w-[32%]  rounded h-80 border border-gray-200">
-                                    <div className="w-full h-[50%] flex items-center justify-center">
+                                <div className="w-[32%] phone:w-[47%] rounded h-80 phone:h-72 border border-gray-200">
+                                    <div className="w-full h-[50%] phone:px-0 flex items-center justify-center bg-white">
                                         <img
                                             src={airpod}
                                             alt=""
                                             className="w-full h-full object-contain"
                                         />
                                     </div>
-                                    <div className="w-full h-[50%] bg-gray-50 flex flex-col py-4 px-3 gap-2">
+                                    <div className="w-full h-[50%] bg-gray-50 flex flex-col phone:justify-between phone:py-2 py-4 px-3 phone:px-1 phone:text-sm gap-2">
                                         <p className="text-pry font-bold">
                                             Apple Airpod Pro
                                         </p>
-                                        <p className="flex justify-between pr-5">
+                                        <p className="flex justify-between pr-5 phone:text-base">
                                             N65,000{" "}
                                             <span className="text-sm line-through">
                                                 N80,000
                                             </span>
                                         </p>
-                                        <p className="flex justify-between items-center">
+                                        <p className="flex justify-between items-center phone:text-xs">
                                             <span className="flex items-center gap-1">
                                                 <FaStar className="text-orange-400 w-4 h-4" />
                                                 3.0
                                             </span>{" "}
                                             (15 reviews){" "}
                                             <span>
-                                                <FaHeart className="h-6 w-6 cursor-pointer text-red-500" />
+                                                <FaHeart className="h-6 w-6 phone:h-4 phone:w-4 cursor-pointer text-red-500" />
                                             </span>
                                         </p>
                                         <button className="w-full h-max bg-pry py-2 rounded text-white">
@@ -328,32 +475,32 @@ const Shop = () => {
                                         </button>
                                     </div>
                                 </div>
-                                <div className="w-[32%]  rounded h-80 border border-gray-200">
-                                    <div className="w-full h-[50%] flex items-center justify-center">
+                                <div className="w-[32%] phone:w-[47%] rounded h-80 phone:h-72 border border-gray-200">
+                                    <div className="w-full h-[50%] phone:px-0 flex items-center justify-center bg-white">
                                         <img
                                             src={airpod}
                                             alt=""
                                             className="w-full h-full object-contain"
                                         />
                                     </div>
-                                    <div className="w-full h-[50%] bg-gray-50 flex flex-col py-4 px-3 gap-2">
+                                    <div className="w-full h-[50%] bg-gray-50 flex flex-col phone:justify-between phone:py-2 py-4 px-3 phone:px-1 phone:text-sm gap-2">
                                         <p className="text-pry font-bold">
                                             Apple Airpod Pro
                                         </p>
-                                        <p className="flex justify-between pr-5">
+                                        <p className="flex justify-between pr-5 phone:text-base">
                                             N65,000{" "}
                                             <span className="text-sm line-through">
                                                 N80,000
                                             </span>
                                         </p>
-                                        <p className="flex justify-between items-center">
+                                        <p className="flex justify-between items-center phone:text-xs">
                                             <span className="flex items-center gap-1">
                                                 <FaStar className="text-orange-400 w-4 h-4" />
                                                 3.0
                                             </span>{" "}
                                             (15 reviews){" "}
                                             <span>
-                                                <FaHeart className="h-6 w-6 cursor-pointer text-red-500" />
+                                                <FaHeart className="h-6 w-6 phone:h-4 phone:w-4 cursor-pointer text-red-500" />
                                             </span>
                                         </p>
                                         <button className="w-full h-max bg-pry py-2 rounded text-white">
@@ -361,32 +508,32 @@ const Shop = () => {
                                         </button>
                                     </div>
                                 </div>
-                                <div className="w-[32%]  rounded h-80 border border-gray-200">
-                                    <div className="w-full h-[50%] flex items-center justify-center">
+                                <div className="w-[32%] phone:w-[47%] rounded h-80 phone:h-72 border border-gray-200">
+                                    <div className="w-full h-[50%] phone:px-0 flex items-center justify-center bg-white">
                                         <img
                                             src={airpod}
                                             alt=""
                                             className="w-full h-full object-contain"
                                         />
                                     </div>
-                                    <div className="w-full h-[50%] bg-gray-50 flex flex-col py-4 px-3 gap-2">
+                                    <div className="w-full h-[50%] bg-gray-50 flex flex-col phone:justify-between phone:py-2 py-4 px-3 phone:px-1 phone:text-sm gap-2">
                                         <p className="text-pry font-bold">
                                             Apple Airpod Pro
                                         </p>
-                                        <p className="flex justify-between pr-5">
+                                        <p className="flex justify-between pr-5 phone:text-base">
                                             N65,000{" "}
                                             <span className="text-sm line-through">
                                                 N80,000
                                             </span>
                                         </p>
-                                        <p className="flex justify-between items-center">
+                                        <p className="flex justify-between items-center phone:text-xs">
                                             <span className="flex items-center gap-1">
                                                 <FaStar className="text-orange-400 w-4 h-4" />
                                                 3.0
                                             </span>{" "}
                                             (15 reviews){" "}
                                             <span>
-                                                <FaHeart className="h-6 w-6 cursor-pointer text-red-500" />
+                                                <FaHeart className="h-6 w-6 phone:h-4 phone:w-4 cursor-pointer text-red-500" />
                                             </span>
                                         </p>
                                         <button className="w-full h-max bg-pry py-2 rounded text-white">
