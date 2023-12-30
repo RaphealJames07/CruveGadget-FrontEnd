@@ -1,6 +1,6 @@
 // import "./Header.css";
 import Logo from "../assets/Logo2.svg";
-import {AiOutlinePoweroff, AiOutlineSearch} from "react-icons/ai";
+import {AiOutlinePoweroff} from "react-icons/ai";
 import {BiSolidUserCircle} from "react-icons/bi";
 import {FaShoppingCart} from "react-icons/fa";
 import {GiHamburgerMenu} from "react-icons/gi";
@@ -59,12 +59,12 @@ const Header = () => {
                 </Link>
             </Menu.Item>
             <Menu.Item key="4">
-                <Link to="/NewHotel" className="HeaderLoneNavDownLinks">
+                <Link to="/Contact" className="HeaderLoneNavDownLinks">
                     Contact
                 </Link>
             </Menu.Item>
             <Menu.Item key="5">
-                <Link to="/NewCar" className="HeaderLoneNavDownLinks">
+                <Link to="/Blog" className="HeaderLoneNavDownLinks">
                     Blog
                 </Link>
             </Menu.Item>
@@ -98,7 +98,7 @@ const Header = () => {
                 {mobileMenu}
             </Drawer>
 
-            <div className="w-full h-20 flex fixed top 0 bg-white justify-center shadow-md">
+            <div className="w-full h-20 flex fixed top 0 z-10 bg-white justify-center shadow-md">
                 <div className="h-full w-[90%] flex justify-between">
                     <div className="h-full w-[10%] phone:w-[30%] flex items-center justify-between">
                         <GiHamburgerMenu
