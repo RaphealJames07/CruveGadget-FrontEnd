@@ -62,16 +62,8 @@ const Profile = () => {
                 <Header />
                 <div className="w-full h-max px-20 phone:px-5 pt-20">
                     <div className="w-full h-20 flex items-center">
-                        <BiArrowBack className="mr-6 text-2xl" />
-                        <p>
-                            Home /{" "}
-                            <span
-                                className="text-[#3F51B5] cursor-pointer"
-                                onClick={setProfile}
-                            >
-                                Profile
-                            </span>
-                        </p>
+                        <BiArrowBack className="mr-6 text-2xl cursor-pointer" onClick={setProfile}/>
+                       
                     </div>
                     <div className="w-full h-max flex justify-between">
                         <div className="w-[30%] phone:hidden h-[40%] bg-slate-100 flex justify-center py-8">
@@ -113,7 +105,12 @@ const Profile = () => {
                         <div className="w-[66%] phone:w-full h-[100%] ">
                             <div className="w-full h-max flex gap-10 flex-col">
                                 {myProfile ? (
-                                    <ProfileContent />
+                                    <ProfileContent
+                                        showAccount={setAccount}
+                                        showOrders={setOrders}
+                                        showPayment={setPayment}
+                                        showSaved={setSaved}
+                                    />
                                 ) : myAccount ? (
                                     <Account />
                                 ) : myOrders ? (

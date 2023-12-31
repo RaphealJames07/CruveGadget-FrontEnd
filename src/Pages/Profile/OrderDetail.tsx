@@ -4,42 +4,42 @@ import {
     AiOutlineDownload,
     AiOutlineMail,
 } from "react-icons/ai";
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
+
 import {TbLocationFilled, TbTruckDelivery} from "react-icons/tb";
 import {BsBoxFill, BsShieldFillCheck} from "react-icons/bs";
 import Truck from "../../assets/truckdelivery.gif";
 import {MdCancelPresentation, MdLocationPin} from "react-icons/md";
-import { useState } from "react";
+import {useState} from "react";
+import Header from "../../Components/Header";
+import Footer from "../../Components/Footer";
 
 const OrderDetail = () => {
+    const [showOrder, setShowOrder] = useState(true);
+    const [showTransit, setShowTransit] = useState(true);
+    const [showDelivered, setShowDelivered] = useState(true);
 
-    const [showOrder, setShowOrder] = useState(true)
-    const [showTransit, setShowTransit] = useState(true)
-    const [showDelivered, setShowDelivered] = useState(true)
-
-    const handleShowOrder = ()=>{
-        setShowOrder(false)
-    }
-    const handleShowTransit = ()=>{
-        setShowTransit(false)
-    }
-    const handleDelivered = ()=>{
-        setShowDelivered(false)
-    }
+    const handleShowOrder = () => {
+        setShowOrder(false);
+    };
+    const handleShowTransit = () => {
+        setShowTransit(false);
+    };
+    const handleDelivered = () => {
+        setShowDelivered(false);
+    };
 
     return (
         <>
-            <div>
-                <Header />
-                <div className="w-full h-max flex flex-col justify-between px-20 py-5 bg-slate-100">
+            <Header />
+            <div className="w-full h-max pt-20">
+                <div className="w-full h-max flex flex-col justify-between px-20 phone:px-5 py-5 bg-slate-100">
                     <div className="w-full h-14 flex items-center">
-                        <p className="w-[30%] h-full flex items-center justify-between text-2xl font-medium">
-                            Order Details<span>No: VIP-123456789</span>
+                        <p className="w-[30%] phone:w-full h-full flex items-center justify-between text-2xl font-medium">
+                            Order Details
                         </p>
                     </div>
-                    <div className="w-full h-max  flex justify-between">
-                        <div className="w-[78%] h-full flex flex-col gap-7 ">
+                    <div className="w-full h-max phone:flex-col  flex justify-between">
+                        <div className="w-[78%] phone:w-full h-full flex flex-col gap-7 ">
                             <div className="w-full h-max bg-white rounded-md">
                                 <div className="w-full h-16 flex justify-between px-5 items-center">
                                     <p className="text-lg font-semibold">
@@ -50,60 +50,86 @@ const OrderDetail = () => {
                                         Invoice
                                     </button>
                                 </div>
-                                <div className="w-full h-12 flex items-center justify-between px-5 bg-slate-200 border-y border-y-gray-300">
-                                    <div className="w-[40%] h-full flex items-center">
+                                <div className="w-full h-12 flex items-center phone:text-sm justify-between px-5 bg-slate-200 border-y border-y-gray-300">
+                                    <div className="w-[40%] phone:w-max h-full flex items-center">
                                         Product Details
                                     </div>
-                                    <div className="w-[20%] h-full flex items-center justify-center">
+                                    <div className="w-[20%] phone:hidden h-full flex items-center justify-center">
                                         Item Price
                                     </div>
-                                    <div className="w-[20%] h-full flex items-center justify-center">
+                                    <div className="w-[20%] h-full phone:hidden flex items-center justify-center">
                                         Quantity
                                     </div>
-                                    <div className="w-[20%] h-full flex items-center justify-center">
+                                    <div className="w-[20%] h-full phone:hidden flex items-center justify-center">
                                         Total Amount
                                     </div>
                                 </div>
-                                <div className="w-full h-28 flex px-5 py-3">
-                                    <div className="w-[12%] h-full flex items-center justify-center bg-black">
-                                        <img src="" alt="" />
+                                <div className="w-full h-max flex phone:flex-col px-5 py-3">
+                                    <div className="w-[40%] phone:w-full h-28 flex">
+                                        <div className="w-[30%] h-full flex items-center justify-center bg-black">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div className="w-[70%] h-full flex flex-col justify-between py-3 px-3">
+                                            <p className="text-lg font-semibold">
+                                                Iphone 12 Pro Max
+                                            </p>
+                                            <p>Color: Pink</p>
+                                            <p>Category: Phone</p>
+                                        </div>
                                     </div>
-                                    <div className="w-[28%] h-full flex flex-col justify-between py-3 px-3">
-                                        <p className="text-lg font-semibold">
-                                            Iphone 12 Pro Max
-                                        </p>
-                                        <p>Color: Pink</p>
-                                        <p>Category: Phone</p>
-                                    </div>
-                                    <div className="w-[20%] h-full flex items-center justify-center">
-                                        <p>N200,000</p>
-                                    </div>
-                                    <div className="w-[20%] h-full flex items-center justify-center">
-                                        2
-                                    </div>
-                                    <div className="w-[20%] h-full flex items-center justify-center">
-                                        400,000
+                                    <div className="w-[60%] phone:w-full h-full phone:h-max phone:flex-col flex">
+                                        <div className="w-[33%] phone:w-full phone:justify-start phone:gap-5 h-full flex items-center justify-center">
+                                            <p className="hidden phone:flex">
+                                                Price
+                                            </p>
+                                            <p>N200,000</p>
+                                        </div>
+                                        <div className="w-[33%] phone:w-full phone:justify-start phone:gap-5 h-full flex items-center justify-center">
+                                            <p className="hidden phone:flex">
+                                                Quantity
+                                            </p>
+                                            <p>2</p>
+                                        </div>
+                                        <div className="w-[33%] phone:w-full phone:justify-start phone:gap-5 h-full flex items-center justify-center">
+                                            <p className="hidden phone:flex">
+                                                Total Price
+                                            </p>
+                                            <p>400,000</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="w-full h-28 flex px-5 py-3">
-                                    <div className="w-[12%] h-full flex items-center justify-center bg-black">
-                                        <img src="" alt="" />
+                                <div className="w-full h-max flex phone:flex-col px-5 py-3">
+                                    <div className="w-[40%] phone:w-full h-28 flex">
+                                        <div className="w-[30%] h-full flex items-center justify-center bg-black">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div className="w-[70%] h-full flex flex-col justify-between py-3 px-3">
+                                            <p className="text-lg font-semibold">
+                                                Iphone 12 Pro Max
+                                            </p>
+                                            <p>Color: Pink</p>
+                                            <p>Category: Phone</p>
+                                        </div>
                                     </div>
-                                    <div className="w-[28%] h-full flex flex-col justify-between py-3 px-3">
-                                        <p className="text-lg font-semibold">
-                                            Iphone 12 Pro Max
-                                        </p>
-                                        <p>Color: Pink</p>
-                                        <p>Category: Phone</p>
-                                    </div>
-                                    <div className="w-[20%] h-full flex items-center justify-center">
-                                        <p>N200,000</p>
-                                    </div>
-                                    <div className="w-[20%] h-full flex items-center justify-center">
-                                        2
-                                    </div>
-                                    <div className="w-[20%] h-full flex items-center justify-center">
-                                        400,000
+                                    <div className="w-[60%] phone:w-full h-full phone:h-max phone:flex-col flex">
+                                        <div className="w-[33%] phone:w-full phone:justify-start phone:gap-5 h-full flex items-center justify-center">
+                                            <p className="hidden phone:flex">
+                                                Price
+                                            </p>
+                                            <p>N200,000</p>
+                                        </div>
+                                        <div className="w-[33%] phone:w-full phone:justify-start phone:gap-5 h-full flex items-center justify-center">
+                                            <p className="hidden phone:flex">
+                                                Quantity
+                                            </p>
+                                            <p>2</p>
+                                        </div>
+                                        <div className="w-[33%] phone:w-full phone:justify-start phone:gap-5 h-full flex items-center justify-center">
+                                            <p className="hidden phone:flex">
+                                                Total Price
+                                            </p>
+                                            <p>400,000</p>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -126,7 +152,7 @@ const OrderDetail = () => {
                                 </div>
                             </div>
                             <div className="w-full h-max bg-white px-5 rounded-md">
-                                <div className="w-full h-14 flex justify-between items-center">
+                                <div className="w-full h-14 phone:h-16 flex phone:flex-col phone:items-start phone:gap-3 justify-between items-center">
                                     <div className="text-lg font-semibold">
                                         Order Status
                                     </div>
@@ -143,7 +169,10 @@ const OrderDetail = () => {
                                 </div>
                                 <div className="w-full h-max py-5 flex flex-col gap-2">
                                     <div className="w-full h-max">
-                                        <div className="w-full h-14 flex items-center gap-5 b cursor-pointer" onClick={handleShowOrder}>
+                                        <div
+                                            className="w-full h-14 flex items-center gap-5 b cursor-pointer"
+                                            onClick={handleShowOrder}
+                                        >
                                             <div className="w-10 h-10 bg-lime-500 rounded-md-full flex items-center justify-center">
                                                 <span>
                                                     <BsBoxFill />
@@ -159,7 +188,13 @@ const OrderDetail = () => {
                                             </div>
                                         </div>
                                         <div className={`w-full flex h-max `}>
-                                            <div className={`w-full max-h-0 ${showOrder ? '' : 'max-h-20 overflow-hidden pointer-events-none' } overflow-hidden transition-oneTransition border-l-2 border-gray-500 border-dashed pl-10 ml-4 flex flex-col gap-5`}>
+                                            <div
+                                                className={`w-full max-h-0 ${
+                                                    showOrder
+                                                        ? ""
+                                                        : "max-h-20 overflow-hidden pointer-events-none"
+                                                } overflow-hidden transition-oneTransition border-l-2 border-gray-500 border-dashed pl-10 ml-4 flex flex-col gap-5`}
+                                            >
                                                 <div className="w-full h-10 ">
                                                     <p className="text-sm flex flex-col">
                                                         Your order has been
@@ -184,7 +219,10 @@ const OrderDetail = () => {
                                         </div>
                                     </div>
                                     <div className="w-full h-max">
-                                        <div className="w-full h-14 flex items-center gap-5 cursor-pointer" onClick={handleShowTransit}>
+                                        <div
+                                            className="w-full h-14 flex items-center gap-5 cursor-pointer"
+                                            onClick={handleShowTransit}
+                                        >
                                             <div className="w-10 h-10 bg-lime-500 rounded-md-full flex items-center justify-center">
                                                 <span>
                                                     <AiFillGift />
@@ -201,7 +239,13 @@ const OrderDetail = () => {
                                             </div>
                                         </div>
                                         <div className="w-full flex h-max">
-                                            <div className={`w-full max-h-0 ${showTransit ? '' : 'max-h-20 overflow-hidden pointer-events-none' } overflow-hidden transition-oneTransition border-l-2 border-gray-500 border-dashed  pl-10 ml-4 flex flex-col gap-5`}>
+                                            <div
+                                                className={`w-full max-h-0 ${
+                                                    showTransit
+                                                        ? ""
+                                                        : "max-h-20 overflow-hidden pointer-events-none"
+                                                } overflow-hidden transition-oneTransition border-l-2 border-gray-500 border-dashed  pl-10 ml-4 flex flex-col gap-5`}
+                                            >
                                                 <div className="w-full h-10 ">
                                                     <p className="text-sm flex flex-col">
                                                         Your order is processed
@@ -227,7 +271,10 @@ const OrderDetail = () => {
                                         </div>
                                     </div>
                                     <div className="w-full h-max">
-                                        <div className="w-full h-14 flex items-center gap-5 cursor-pointer" onClick={handleDelivered}>
+                                        <div
+                                            className="w-full h-14 flex items-center gap-5 cursor-pointer"
+                                            onClick={handleDelivered}
+                                        >
                                             <div className="w-10 h-10 bg-lime-500 rounded-md-full flex items-center justify-center">
                                                 <span>
                                                     <BsBoxFill />
@@ -244,7 +291,13 @@ const OrderDetail = () => {
                                         </div>
                                         <div className="w-full flex h-max">
                                             <div className="w-full h-max  pl-11 ml-4 flex flex-col gap-5">
-                                                <div className={`w-full max-h-0 ${showDelivered ? '' : 'max-h-10 overflow-hidden pointer-events-none' } overflow-hidden transition-oneTransition`}>
+                                                <div
+                                                    className={`w-full max-h-0 ${
+                                                        showDelivered
+                                                            ? ""
+                                                            : "max-h-10 overflow-hidden pointer-events-none"
+                                                    } overflow-hidden transition-oneTransition`}
+                                                >
                                                     <p className="text-sm flex flex-col">
                                                         Your order has been
                                                         delivered
@@ -260,7 +313,7 @@ const OrderDetail = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-[20%] h-full  flex flex-col gap-7 ">
+                        <div className="w-[20%] phone:w-full h-full  flex flex-col gap-7 ">
                             <div className="w-full h-64 shadow-sm bg-white rounded-md">
                                 <div className="w-full h-14 bg-white flex items-center gap-4 border-b border-b-gray-300">
                                     <TbTruckDelivery className="w-6 h-6 text-gray-500 ml-4" />
@@ -275,8 +328,12 @@ const OrderDetail = () => {
                                         />
                                     </div>
                                     <div className="text-center w-full h-1/2 flex flex-col gap-3">
-                                        <h2 className="text-sm">RQK Logistics</h2>
-                                        <h3 className="text-sm">Phone no: 080123456789</h3>
+                                        <h2 className="text-sm">
+                                            RQK Logistics
+                                        </h2>
+                                        <h3 className="text-sm">
+                                            Phone no: 080123456789
+                                        </h3>
                                         <p className="text-sm">
                                             Payment mode:{" "}
                                             <span>Debit Card</span>
@@ -290,35 +347,48 @@ const OrderDetail = () => {
                                 </div>
                                 <div className="w-full h-48 flex flex-col justify-around ">
                                     <div className="w-full h-[40%] pl-4 flex items-center gap-2">
-                                        <img src="" alt="" className="w-12 h-12 bg-sky-300 rounded-md"/>
+                                        <img
+                                            src=""
+                                            alt=""
+                                            className="w-12 h-12 bg-sky-300 rounded-md"
+                                        />
                                         <p className="w-[70%] h-[80%]  flex flex-col justify-center text-sm">
-                                            Joseph Parker <span className="text-xs">Active User</span>
+                                            Joseph Parker{" "}
+                                            <span className="text-xs">
+                                                Active User
+                                            </span>
                                         </p>
                                     </div>
                                     <div className="w-full h-[25%] flex items-center pl-4 gap-2 text-sm">
-                                        <AiOutlineMail className="w-5 h-5 text-sm"/>
+                                        <AiOutlineMail className="w-5 h-5 text-sm" />
                                         Joseph1234@gmail.com
                                     </div>
                                     <div className="w-full h-[25%] flex items-center pl-4 gap-2 text-sm">
-                                        <AiFillPhone className="w-5 h-5 text-sm"/>
+                                        <AiFillPhone className="w-5 h-5 text-sm" />
                                         +1234456780
                                     </div>
                                 </div>
                             </div>
                             <div className="w-full h-64 bg-white rounded-md ">
                                 <div className="w-full h-14 flex items-center gap-4 border-b border-b-gray-300">
-                                    <MdLocationPin className="ml-4"/>
+                                    <MdLocationPin className="ml-4" />
                                     Billing Address
                                 </div>
                                 <div className="w-full h-48 flex flex-col justify-between py-3">
-                                    <p className="ml-4 text-sm">Joseph Parker</p>
+                                    <p className="ml-4 text-sm">
+                                        Joseph Parker
+                                    </p>
                                     <p className="ml-4 text-sm">+1234567890</p>
-                                    <p className="ml-4 text-sm">126 Kukoyi Street Olodi Apapa Lagos Nigeria 126 Kukoyi Street Olodi Apapa Lagos Nigeria</p>
+                                    <p className="ml-4 text-sm">
+                                        126 Kukoyi Street Olodi Apapa Lagos
+                                        Nigeria 126 Kukoyi Street Olodi Apapa
+                                        Lagos Nigeria
+                                    </p>
                                 </div>
                             </div>
                             <div className="w-full h-64 bg-white rounded-md">
                                 <div className="w-full h-14 flex items-center gap-4 border-b border-b-gray-300">
-                                    <BsShieldFillCheck className="ml-4"/>
+                                    <BsShieldFillCheck className="ml-4" />
                                     Payment Details
                                 </div>
                                 <div className="w-full h-48 flex flex-col justify-between py-3">
@@ -344,8 +414,8 @@ const OrderDetail = () => {
                         </div>
                     </div>
                 </div>
-                <Footer />
             </div>
+            <Footer />
         </>
     );
 };

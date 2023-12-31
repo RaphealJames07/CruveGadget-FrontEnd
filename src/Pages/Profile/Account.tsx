@@ -54,12 +54,12 @@ const Account = () => {
 
     return (
         <>
-            <div className="w-full h-[100vh] flex flex-col justify-between pb-10">
-                <div className="w-full h-[50%] bg-white border-x-2 border-y-2 border-pry rounded p-4">
+            <div className="w-full h-[100vh] phone:h-max flex flex-col phone:gap-5 justify-between pb-10">
+                <div className="w-full h-[50%] phone:h-max bg-white border-x-2 border-y-2 border-pry rounded p-4">
                     <p className="text-pry text-2xl font-semibold w-full h-10 flex items-center">
                         Account Information
                     </p>
-                    <div className="w-full h-[90%] ">
+                    <div className="w-full h-[90%] phone:h-72 ">
                         <div className="w-full h-[70%]">
                             <div className="w-full h-[50%] flex justify-between">
                                 <div className="w-[45%] h-full flex  flex-col">
@@ -127,7 +127,7 @@ const Account = () => {
                         <div className="w-full h-[30%] flex items-center justify-center gap-10">
                             {editMode ? (
                                 <button
-                                    type="primary"
+                                    onClick={() => setEditMode(false)}
                                     className=" bg-pry w-32 rounded text-white h-10"
                                 >
                                     Save Initials
@@ -149,12 +149,12 @@ const Account = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-full h-[45%]  border-x-2 border-y-2 border-pry rounded p-4">
+                <div className="w-full h-[45%] phone:h-max  border-x-2 border-y-2 border-pry rounded p-4">
                     <p className="text-pry text-2xl font-semibold w-full h-14 flex items-center">
                         Delivery Address
                     </p>
-                    <div className="w-full h-[65%] flex items-center overflow gap-3">
-                        <span className="w-72 h-[90%] flex flex-col gap-4 ">
+                    <div className="w-full h-[65%] flex items-center overflow phone:flex-col phone:h-max gap-3">
+                        <span className="w-72 phone:w-full h-[90%] flex flex-col gap-4 ">
                             <label className="w-full h-[20%] flex items-end justify-between text-lg px-2">
                                 Address 1{" "}
                                 <span
@@ -178,7 +178,7 @@ const Account = () => {
                                 onChange={handleAddyChange}
                             />
                         </span>
-                        <span className="w-72 h-[90%] flex flex-col gap-4 ">
+                        <span className="w-72 phone:w-full h-[90%] flex flex-col gap-4 ">
                             <label className="w-full h-[20%] flex items-end justify-between text-lg px-2">
                                 Address 1{" "}
                                 <span
@@ -202,7 +202,7 @@ const Account = () => {
                                 onChange={handleAddyChange}
                             />
                         </span>
-                        <span className="w-72 h-[90%] flex flex-col gap-4">
+                        <span className="w-72 phone:w-full h-[90%] flex flex-col gap-4">
                             <label className="w-full h-[20%] flex items-end justify-between text-lg px-2">
                                 Address 1{" "}
                                 <span
@@ -227,8 +227,8 @@ const Account = () => {
                             />
                         </span>
                     </div>
-                    <div className="w-full h-[20%]  flex items-center justify-center">
-                        <button className=" bg-pry w-40 rounded text-white h-10">
+                    <div className="w-full h-[20%] phone:h-16  flex items-center justify-center">
+                        <button className=" bg-pry px-5 rounded text-white py-3">
                             Add New Address
                         </button>
                     </div>
@@ -237,7 +237,7 @@ const Account = () => {
             <Modal
                 title="Change Password"
                 open={showPasswordModal}
-                onOk={""}
+                onOk={() => setShowPasswordModal(false)}
                 onCancel={() => setShowPasswordModal(false)}
             >
                 <Form>

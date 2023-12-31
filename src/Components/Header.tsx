@@ -147,7 +147,6 @@ const Header = () => {
                         </ul>
                     </div>
                     <div className="w-[20%] h-full phone:w-[25%] flex gap-8 items-center">
-                        
                         <div className="w-[25%] h-full phone:w-[35%]  phone:h-10 flex items-center justify-center">
                             <BiSolidUserCircle
                                 className="w-6 h-6 phone:w-28 phone:h-28  cursor-pointer"

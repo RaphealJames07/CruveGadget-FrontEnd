@@ -5,7 +5,7 @@ import profilePic from "../../assets/profile-pic.png";
 import {BiPackage, BiSolidPencil} from "react-icons/bi";
 import {AiFillHeart} from "react-icons/ai";
 
-const ProfileContent = () => {
+const ProfileContent = ({showAccount,showOrders,showPayment,showSaved}) => {
     return (
         <>
             <div className="w-full h-max flex flex-col items-center gap-3 ">
@@ -25,7 +25,7 @@ const ProfileContent = () => {
             </div>
             <div className="w-full h-max flex flex-col justify-between gap-5">
                 <div className="w-full h-max bg-white flex justify-between phone:flex-col phone:gap-5">
-                    <div className="w-[48%] phone:w-full h-32 flex justify-between border-x-2 border-y-2 border-black rounded cursor-pointer">
+                    <div onClick={showAccount} className="w-[48%] phone:w-full h-32 flex justify-between border-x-2 border-y-2 border-black rounded cursor-pointer">
                         <div className="w-[75%] h-full flex flex-col justify-around py-5 px-6">
                             <h1 className="text-2xl font-semibold">
                                 Manage Account
@@ -41,7 +41,7 @@ const ProfileContent = () => {
                             </span>
                         </div>
                     </div>
-                    <div className="w-[48%] phone:w-full h-32 flex justify-between border-x-2 border-y-2 border-black rounded cursor-pointer">
+                    <div onClick={showOrders} className="w-[48%] phone:w-full h-32 flex justify-between border-x-2 border-y-2 border-black rounded cursor-pointer">
                         <div className="w-[75%] h-full flex flex-col justify-around py-5 px-6">
                             <h1 className="text-2xl font-semibold">Orders</h1>
                             <p>
@@ -57,7 +57,7 @@ const ProfileContent = () => {
                     </div>
                 </div>
                 <div className="w-full h-max bg-white flex justify-between phone:flex-col gap-5">
-                    <div className="w-[48%] phone:w-full h-32 flex justify-between border-x-2 border-y-2 border-black rounded cursor-pointer">
+                    <div onClick={showPayment} className="w-[48%] phone:w-full h-32 flex justify-between border-x-2 border-y-2 border-black rounded cursor-pointer">
                         <div className="w-[75%] h-full flex flex-col justify-around py-5 px-6">
                             <h1 className="text-2xl font-semibold">
                                 Payment Methods
@@ -73,7 +73,7 @@ const ProfileContent = () => {
                             </span>
                         </div>
                     </div>
-                    <div className="w-[48%] phone:w-full h-32 flex justify-between border-x-2 border-y-2 border-black rounded cursor-pointer">
+                    <div onClick={showSaved} className="w-[48%] phone:w-full h-32 flex justify-between border-x-2 border-y-2 border-black rounded cursor-pointer">
                         <div className="w-[75%] h-full flex flex-col justify-around py-5 px-6">
                             <h1 className="text-2xl font-semibold">
                                 Saved Items
