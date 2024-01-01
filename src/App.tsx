@@ -17,6 +17,9 @@ import Profile from "./Pages/Profile/Profile";
 import OrderDetail from "./Pages/Profile/OrderDetail";
 import Cart from "./Pages/Cart/Cart";
 import ProductDetail from "./Pages/ProductDetail";
+import Checkout from "./Pages/Checkout";
+import PaySucces from "./Pages/PaySuccess";
+import Payfailed from "./Pages/PayFailed";
 // import Cart from "./Pages/Cart";
 
 const App = () => {
@@ -38,8 +41,11 @@ const App = () => {
                         <Route path="/About" element={<About/>} />
                         <Route path="/Profile" element={<Profile/>} />
                         <Route path="/OrderDetail" element={<OrderDetail/>} />
+                        <Route path="/PaymentSuccess" element={<PaySucces/>} />
+                        <Route path="/PaymentFailed" element={<Payfailed/>} />
                         <Route path="/Cart" element={<Cart/>} />
                         <Route path="/ProductDetail" element={<ProductDetail/>} />
+                        <Route path="/Checkout" element={<Checkout/>} />
                         <Route path="/Contact" element={<Contact/>} />
                         <Route path="/Blog" element={<Blog/>} />
                     </Routes>
