@@ -1,28 +1,52 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "name": "Juliet Omas",
-      "email": "julie@yahoo.com",
-      "number": "08100000000"
+    "user": {
+        "name": "Rapheal James",
+        "email": "raphael.james@example.com",
+        "id": "1011"
     },
-    {
-      "id": 2,
-      "name": "James Williams",
-      "email": "jameswilly@gmail.com",
-      "number": "08111111111"
-    },
-    {
-      "id": 3,
-      "name": "Ahmed Ali",
-      "email": "ahmedali012@gmail.com",
-      "number": "09022222222"
-    },
-    {
-      "id": 4,
-      "name": "Grace Funsho",
-      "email": "gracefunsho@gmail.com",
-      "number": "09033333333"
-    }
-  ]
+    "homeProducts": [
+        {
+            "id": "homeCategory",
+            "category": "dealOfTheWeek",
+            "item": [
+                {
+                    "id": "100w",
+                    "productName": "Iphone 12 Pro Max",
+                    "itemPriceSlash": "245000",
+                    "itemCurrentPrice": "225000",
+                    "color": "Red",
+                    "brand": "Apple",
+                    "section": "Phones",
+                    "availability": true,
+                    "rating": 4.7,
+                    "description": "This is the latest iPhone from Apple with a stunning design and powerful hardware.",
+                    "descriptionShort": "This is the latest iPhone from Apple with a stunning design and powerful hardware.",
+                    "quantity": 45,
+                    "reviews": [
+                        {
+                            "star": 4,
+                            "comment": "Loved it",
+                            "postedBy": "64d222181ba9fed0717d59cd",
+                            "_id": "64d2c9ab7685c83c9a7d52ea",
+                            "postedTime": "August 15, 2023, 4:18 AM"
+                        },
+                        {
+                            "star": 3,
+                            "comment": "nice",
+                            "postedTime": "September 6, 2023, 3:29 PM",
+                            "postedBy": "64e33740ce50820dd2ed5ef7",
+                            "_id": "64e34501508647167b37d4fe"
+                        }
+                    ],
+                    "images": [
+                        "./src/assets/iphone12.png",
+                        "./src/assets/IPHONE-12-PRO-MAX-1.jpg",
+                        "./src/assets/IPHONE-12-PRO-MAX-10.jpg",
+                        "./src/assets/IPHONE-12-PRO-MAX-6.jpg",
+                        "./src/assets/IPHONE-12-PRO-MAX-9.jpg"
+                    ]
+                }
+            ]
+        }
+    ]
 }
