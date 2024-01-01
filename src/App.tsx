@@ -16,6 +16,7 @@ import Shop from "./Pages/Shop";
 import Profile from "./Pages/Profile/Profile";
 import OrderDetail from "./Pages/Profile/OrderDetail";
 import Cart from "./Pages/Cart/Cart";
+import ProductDetail from "./Pages/ProductDetail";
 // import Cart from "./Pages/Cart";
 
 const App = () => {
@@ -38,6 +39,7 @@ const App = () => {
                         <Route path="/Profile" element={<Profile/>} />
                         <Route path="/OrderDetail" element={<OrderDetail/>} />
                         <Route path="/Cart" element={<Cart/>} />
+                        <Route path="/ProductDetail" element={<ProductDetail/>} />
                         <Route path="/Contact" element={<Contact/>} />
                         <Route path="/Blog" element={<Blog/>} />
                     </Routes>
