@@ -1,6 +1,10 @@
+
 import airpod from "../assets/airpod.png";
 
 const DealOfWeek = () => {
+
+
+
     return (
         <div className="w-full h-max flex flex-col ">
             <div className="w-full flex items-center justify-between h-14 bg-gray-100 px-20 phone:px-5">

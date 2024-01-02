@@ -1,9 +1,42 @@
 {
     "user": {
-        "name": "Rapheal James",
-        "email": "raphael.james@example.com",
-        "id": "1011"
+        "first name": "John",
+        "last name": "Doe",
+        "phone number": "08123456789",
+        "email": "john@example.com",
+        "isSubscribed": true,
+        "isAdmin": false,
+        "isSuperAdmin": false,
+        "isDriver": false,
+        "isVerified": true
     },
+    "driver": {
+      
+    },
+    "address": [
+        {
+            "address1": "No 10 Somewhere in lagos nigeria Ikeja Lagos Nigeria"
+        },
+        {
+            "address1": "No 10 Somewhere in lagos nigeria Ikeja Lagos Nigeria"
+        },
+        {
+            "address1": "No 10 Somewhere in lagos nigeria Ikeja Lagos Nigeria"
+        }
+    ],
+    "cart": [
+        {
+            "product_id": "PRD-0001",
+            "quantity": 2,
+            "unit price": 1000,
+            "total price": 2000,
+            "isSelected": true,
+            "product name": "Headset",
+            "brand": "oraimo",
+            "color": "black",
+            "image": "./src/assets/headset2.svg"
+        }
+    ],
     "homeProducts": [
         {
             "id": "homeCategory",
@@ -21,7 +54,7 @@
                     "rating": 4.7,
                     "description": "This is the latest iPhone from Apple with a stunning design and powerful hardware.",
                     "descriptionShort": "This is the latest iPhone from Apple with a stunning design and powerful hardware.",
-                    "quantity": 45,
+                    "stockQuantity": 45,
                     "reviews": [
                         {
                             "star": 4,
@@ -44,9 +77,149 @@
                         "./src/assets/IPHONE-12-PRO-MAX-10.jpg",
                         "./src/assets/IPHONE-12-PRO-MAX-6.jpg",
                         "./src/assets/IPHONE-12-PRO-MAX-9.jpg"
+                    ],
+                    "specifications": [
+                        "Network: Sim/LTE/5G",
+                        "SIM: Nano Sim",
+                        "Size: 6.1 inches, 91.3 cm2",
+                        "Resolution: 1179 x 2556 pixels, 19.5:9 ratio",
+                        "OS: iOS 17, upgradable to iOS 17.1.1",
+                        "Chipset: Apple A16 Bionic (4 nm)",
+                        "CPU: Hexa-core (2x3.46 GHz Everest + 4x2.02 GHz Sawtooth)",
+                        " GPU: Apple GPU (5-core graphics)",
+                        "Main Camera: Dual Lens - 48 MP, f/1.6, 26mm (wide), 1/1.56, 1.0 dual pixel PDAF sensor-shift OIS",
+                        "Main Camera: 12 MP -  12 MP, f/2.4, 13mm, 120˚ (ultrawide)",
+                        "Main Camera Features: Dual-LED dual-tone flash, HDR (photo/panorama)",
+                        "Main Camera Video :  Video: 4K@24/25/30/60fps, 1080p@25/30/60/120/240fps, HDR, Dolby Vision HDR (up to 60fps), Cinematic mode (4K@30fps), stereo sound rec.",
+                        "Selfie Camera:  12 MP, f/1.9, 23mm (wide), 1/3.6, PDAF",
+                        "Selfie Camera Features: HDR, Cinematic mode (4K@30fps)",
+                        "Selfie Camera Video: 4K@24/25/30/60fps, 1080p@25/30/60/120fps, gyro-EIS",
+                        "Battery:  Type: Li-Ion 3349 mAh, non-removable",
+                        " Charging: Wired, PD2.0, 50% in 30 min (advertised), 15W wireless (MagSafe), 7.5W wireless (Qi), 4.5W reverse wired",
+                        "Phone features: Sensors: Face ID, accelerometer, gyro, proximity, compass, barometer, Ultra Wideband 2 (UWB) support"
                     ]
                 }
             ]
+        }
+    ],
+    "savedItems": [
+        {
+            "id": "saved100",
+            "productName": "Iphone 12 Pro Max",
+            "product Price": 300000
+        }
+    ],
+    "orders": [
+        {
+            "orderId": "order100",
+            "shippingAddress": {
+                "street": "Street Name",
+                "city": "City Name",
+                "state": "State Name",
+                "country": "Country Name"
+            },
+            "logistics": {
+                "carrier": "FedEx",
+                "payment mode": "Debit card / POD",
+                "driver name": "John Mark",
+                "driver number": "08123456789",
+                "tracking number": "TRACKING123"
+            },
+            "userDetails": {
+                "firstName": "John",
+                "lastName": "Doe",
+                "email": "john.doe@example.com",
+                "contactNumber": "+1234567890"
+            },
+            "payment details": {
+                "method": "Credit Card",
+                "transaction reference": "VLZ124561278124",
+                "amount paid": "1200",
+                "payment status": true
+            },
+            "items": [
+                {
+                    "itemId": "order1",
+                    "quantity": 2,
+                    "price": 400000,
+                    "orderStatus": "On Delivery",
+                    "color": "Red",
+                    "setcion": "Phone",
+                    "item name": "iphone 12 pro",
+                    "total Amount": "800000"
+                },
+                {
+                    "itemId": "order2",
+                    "quantity": 1,
+                    "price": 400000,
+                    "orderStatus": "On Delivery",
+                    "color": "Red",
+                    "setcion": "Phone",
+                    "item name": "iphone 12 pro",
+                    "total Amount": "200000"
+                },
+                {
+                    "itemId": "order3",
+                    "quantity": 5,
+                    "price": 200000,
+                    "orderStatus": "On Delivery",
+                    "color": "Red",
+                    "setcion": "Phone",
+                    "item name": "iphone 12 pro",
+                    "total Amount": "1000000"
+                }
+            ],
+            "order tracker": {
+                "trackingID": "TK1234567890",
+                "current status": "In Transit",
+                "stages": {
+                    "stage1": [
+                        {
+                            "name": "order placed",
+                            "stage_status": true,
+                            "time": "Wed, 15 Oct 2023 - 5:34PM",
+                            "info": "Your order has been placed.",
+                            "more info": "Your order is up for processing"
+                        }
+                    ],
+                    "stage2": [
+                        {
+                            "name": "Packaged, Out for delivery",
+                            "stage_status": true,
+                            "time": "Wed, 15 Oct 2023 - 5:34PM",
+                            "info": "Your order is processed and ready for delivery",
+                            "more info": "Your order is picked up by the driver enroute to you"
+                        }
+                    ],
+                    "stage3": [
+                        {
+                            "name": "Order Delivered",
+                            "stage_status": true,
+                            "time": "Wed, 15 Oct 2023 - 5:34PM",
+                            "info": "Your order has been delivered recieved and signed by James",
+                            "more info": "Thank you for shopping with us, please leave a review for the product and delivery time based on satisfaction"
+                        }
+                    ],
+                    "stage4": [
+                        {
+                            "name": "cancelled",
+                            "stage_status": true,
+                            "time": "Wed, 15 Oct 2023 - 5:34PM",
+                            "info": "your order has been cancelled",
+                            "more info": "Customer was not available to revieve package"
+                        }
+                    ],
+                    "stage5": [
+                        {
+                            "name": "returned",
+                            "stage_status": true,
+                            "time": "Wed, 15 Oct 2023 - 5:34PM",
+                            "info": "package returned",
+                            "more info": "Change of color"
+                        }
+                    ]
+                }
+            }
         }
     ]
 }
