@@ -14,18 +14,18 @@ import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 
 const OrderDetail = () => {
-    const [showOrder, setShowOrder] = useState(true);
-    const [showTransit, setShowTransit] = useState(true);
-    const [showDelivered, setShowDelivered] = useState(true);
+    const [showOrder, setShowOrder] = useState(false);
+    const [showTransit, setShowTransit] = useState(false);
+    const [showDelivered, setShowDelivered] = useState(false);
 
     const handleShowOrder = () => {
-        setShowOrder(false);
+        setShowOrder(!showOrder);
     };
     const handleShowTransit = () => {
-        setShowTransit(false);
+        setShowTransit(!showTransit);
     };
     const handleDelivered = () => {
-        setShowDelivered(false);
+        setShowDelivered(!showDelivered);
     };
 
     return (
